@@ -31,11 +31,12 @@ body {
   --accent: #43A7FF;
 
   /* header */
-  --header-background: light-dark(rgb(0, 0, 0), rgba(255, 255, 255, 0.209));
+  --inverted-background: light-dark(black, rgba(255, 255, 255, 0.209));
 }
 
 html {
-  background-color: var(--main-background);
+  /* hier geen var omdat dit niet goed werkte */
+  background-color: light-dark(white, black);
 }
 
 img, video {
@@ -48,12 +49,12 @@ h1 {
     font-weight: 600;
 }
 
-h2 {
+h2,h4 {
     font-size: 1.6rem;
     font-weight: 600;
 }
 
-h3, h4, h5, h6 {
+h3, h5, h6 {
   font-size: 1.7rem;
   font-weight: 600;
 }
@@ -82,6 +83,7 @@ header {
   top: 2vh;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 0 12px -2px rgba(255, 255, 255, 0.5), 0 6px 6px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 
   section {
     width: 95vw;
@@ -139,7 +141,7 @@ main {
     }
 
     .logo {
-      background-color: var(--main-background);
+      background-color: black;
       border: 2px solid white;
       display: flex;
       justify-content: center;
@@ -233,9 +235,10 @@ main {
       align-items: center;
       background-color: var(--accent);
       color: white;
-      width: 60vw;
-      height: 2.5rem;
-      padding: .5rem;
+      width: 70vw;
+      max-width: 20rem;
+      height: 3rem;
+      padding: 1rem;
       border-radius: 25px;
       position: relative;
 
@@ -243,10 +246,56 @@ main {
         display: block;
         content: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 8.25H15.25M15.25 8.25L8.25 1.25M15.25 8.25L8.25 15.25' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         position: absolute;
-        top: 50%;
         right: 2rem;
+        top: 50%;
         transform: translateY(-50%);
         line-height: 0;
+      }
+    }
+  }
+
+  /* section with my work ( portfolio) */
+  section:nth-of-type(3) {
+    margin-top: 5rem;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      
+      a {
+        display: flex;
+        align-items: center;
+        margin-right: .5rem;
+        color: var(--accent);
+        text-decoration: underline;
+
+        &::after {
+          display: flex;
+          line-height: 0;
+          margin-left: .5rem;
+          content: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 8.25H15.25M15.25 8.25L8.25 1.25M15.25 8.25L8.25 15.25' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    p {
+      margin-top: 2rem;
+    }
+
+    article {
+
+      img {
+        border-radius: 1rem 1rem 0px 0px;
+      }
+
+      p {
+          background-color: var(--inverted-background);
+          backdrop-filter: blur(10px);
+          margin-top: -.5rem;
+          padding: .5rem;
+          border-radius: 0px 0px 1rem 1rem;
       }
     }
   }
