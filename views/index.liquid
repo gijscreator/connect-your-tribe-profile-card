@@ -1,14 +1,33 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
-
-  <p>{{ person.name }}</p>
-
-  <footer></footer>
-</article>
+<main>
+  <div class="totale-wrapper">
+    <div class="wrapper-center">
+      <div class="wrapper-tekst-knop">
+        <img class="profielfoto" src="assets/gogo.png" alt="profielfoto">
+        <p class="tekst-over-mij1">
+          {{ person.name }}, <span class="leeftijd"> 19 jaar </span>
+        </p>
+        <p class="tekst-over-mij2">
+          Creative front end developer
+        </p>
+        <p class="tekst-over-mij3">
+          Mijn kennis: <br><br>
+          <span> html </span>
+          <span> css </span>
+          <span> javascript </span>
+          <br>
+          <br>
+          <span class="html-percentage"> 20% </span>
+          <span class="css-percentage"> 30% </span>
+          <span class="js-percentage"> 10% </span>
+        </p>
+        <a class="button blue button-blue" href="portfolio.html">
+          Mijn portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
 
 {% render 'partials/foot.liquid' %}
