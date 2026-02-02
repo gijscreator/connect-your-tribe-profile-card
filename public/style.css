@@ -1,368 +1,87 @@
-/* general styles */
+/* ==========================================================
+1. CSS Reset, Global Defaults & Custom Properties
+========================================================== */
 
-p,
-a,
-h1 {
-  font-size: 1rem;
-  font-family: Arial, sans-serif;
-  font-weight: 800;
+* {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "roboto", sans-serif;
+}
+
+:root {
+    color-scheme: light dark;
 }
 
 body {
-  margin-top: 50px;
-}
-img {
-  max-width: 100%;
-  height: auto;
+  --main-background: light-dark(white, black);
+
+  /* header */
+  --header-background: light-dark(rgb(0, 0, 0), rgba(255, 255, 255, 0.209));
 }
 
-/* styling home */
-
-.portfolio-body {
-  background: #4a7b9e;
-  padding-bottom: 50px;
-  min-height: 100vh;
-}
-.tekst-over-mij3 {
-  margin-bottom: 30px;
+html {
+  background-color: var(--main-background);
 }
 
-.totale-wrapper {
+header {
+  background-color: var(--header-background);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
   display: flex;
-  gap: 10%;
+  margin: 1rem auto;
+  width: 90vw;
+  height: 60px;
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 12px -2px rgba(255, 255, 255, 0.5), 0 6px 6px rgba(0, 0, 0, 0.2);
+
+  section {
+
+    width: 90vw;
+    display: flex;
+    
+    img {
+      width: 50px;
+      height: auto;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  }
+
+
 }
 
-.leeftijd {
-  color: white;
-  font-weight: 800;
-  background: rgb(64, 118, 212);
-  padding: 4px;
-  border-radius: 8px;
-}
-
-span {
-  color: white;
-  font-weight: 800;
-  background: rgb(64, 118, 212);
-  padding: 6px 9px;
-  border-radius: 10px 2px;
-  margin-right: 5px;
-}
-
-.css-percentage {
-  padding: 6px 21px;
-  border-radius: 2px 10px;
-}
-
-.js-percentage {
-  padding: 6px 10px;
-  border-radius: 2px 10px;
-}
-
-.html-percentage {
-  padding: 6px 15px;
-  border-radius: 2px 10px;
-}
-
-.profielfoto {
-  background-color: black;
-  border-radius: 100%;
-  object-fit: cover;
-  width: 35%;
-  padding: 10px 20px 10px 10px;
-  height: 100%;
-  border: rgb(64, 118, 212) solid 3px;
-  box-shadow: 0px 0px 10px rgb(64, 118, 212);
-}
-
-.profielfoto:hover {
-  transform: rotate3d(0, 1, 0, 1600deg);
-  transition: ease-in-out, 20s;
-}
-
-.button {
-  padding: .5rem 7%;
-  height: 100%;
-  font-size: 1rem;
-  color: rgb(255, 255, 255);
-  background: rgb(64, 118, 212);
-  border: none;
-  border-radius: 15px 5px;
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.blue {
-  background-color: rgb(64, 118, 212);
-}
-
-.green {
-  background-color: rgb(30, 180, 0);
-}
-
-.button-green:hover {
-  background-color: rgb(30, 180, 0);
-  color: white;
-  box-shadow: rgb(64, 118, 212) 0px 7px 29px 0px;
-}
-
-.button-green:active {
-  transform: translateY(10px);
-  transition: 100ms;
-  background-color: rgb(30, 180, 0);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(64, 118, 212) 0px 0px 0px 0px;
-}
-
-.button-blue:hover {
-  background-color: rgb(64, 118, 212);
-  color: white;
-  box-shadow: rgb(64, 118, 212) 0px 7px 29px 0px;
-}
-
-.button-blue:active {
-  transform: translateY(10px);
-  transition: 100ms;
-  background-color: white;
-  color: black;
-  box-shadow: rgb(64, 118, 212) 0px 0px 0px 0px;
-}
-
-.wrapper-center {
-  width: 90%;
-  height: auto;
-  margin-left: 100px;
-  background: #f2f2f6;
-  border-radius: 25px;
-  margin: 0 auto;
-  padding: 0px 0px 20px 0px;
-  text-align: center;
-  box-shadow: 2px 3px 10px rgb(64, 118, 212);
-  max-width: 800px;
-}
-
-.wrapper-tekst-knop {
-  padding: 20px;
-}
-
-.p-zin {
-  font-size: 0.7rem;
-}
-
-#hidden-html {
-  display: none;
-}
-
-#hidden-css {
-  display: none;
-}
-
-#hidden-js {
-  display: none;
-}
-
-/* styling portfolio grid */
-
-.portfolio-wrapper {
-  display: flex;
-  justify-content: space-around;
-  padding: 0px 100px;
-  align-items: center;
-  max-width: 2000px;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-.opdracht-card {
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  border: 1px solid #eee;
-  border-radius: 25px;
-  padding: 20px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-} 
-
-.opdracht-card:hover {
-  box-shadow: 0 4px 15px rgb(64, 118, 212);
-  transform: translate3d(-5px, -5px, 0px);
-  
-  transform: rotate3d(6, 3, 3, 10deg);
-}
-
-.portfolio-image {
+img, video {
   width: 100%;
-  height: 100%;
-  max-height: 540px;
-  max-width: 800px;
-}
-
-.portfolio-titel {
-  text-align: center;
-  font-size: 4rem;
-  color: white;
-}
-
-.opdrachtgever,
-a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 0px;
-}
-
-.opdracht-card:hover .opdracht-card-onhover {
-  display: flex;
-}
-
-.opdracht-card-onhover {
-  display: none;
-  position: absolute;
-  color: white;
-  font-size: 1rem;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgb(64, 118, 212);
-  border: none;
-  padding: 30px;
-  justify-content: left;
-  align-items: left;
-  flex-direction: column;
-}
-
-.hover-card-img {
-  width: 30%;
-  height: 14%;
-  max-height: 70px;
-  justify-content: left;
-}
-
-.hover-card-img1 {
-  width: 40%;
-  height: auto;
-  max-height: 40px;
-  justify-content: left;
-}
-
-.subtext>p {
-  text-align: left;
-}
-
-.p-zin {
-  margin-bottom: 0px;
-}
-
-.gotoportfolio {
-  width: 80%;
-  justify-content: center;
-  display: flex;
-  background-color: #ffffff;
-  color: black;
-  border: none;
-  font-weight: 800;
-  padding: 10px 10px;
-  border-radius: 20px;
-}
-
-.subtext-img {
-  width: 80%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* mobile styling portfolio grid */
-
-@media (max-width: 768px) {
-  .portfolio-titel {
-    font-size: 2.5rem;
-  }
-}
-
-
-/* styling portfolio page */
-
-.pill {
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 800;
-  background: rgb(64, 118, 212);
-  padding: 6px 9px;
-  border-radius: 10px;
-  margin-right: 10px;
-  width: 30%;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.opdracht1 {
-  background-color: rgb(64, 118, 212);
-}
-
-.opdracht1:hover {
-  background-color: rgb(65, 108, 181);
-  color: white;
-  box-shadow: rgb(64, 118, 212) 0px 0px 10px 0px;
-}
-
-.opdracht2 {
-  background-color: rgb(49, 0, 164);
-}
-
-.opdracht2:hover {
-  background-color: rgb(49, 0, 164);
-  color: white;
-  box-shadow: rgb(49, 0, 164) 0px 0px 10px 0px;
-}
-
-.company-img {
-  width: 150px;
   height: auto;
 }
 
-.list-icons {
-  padding: 0;
-  list-style: none;
+h1 {
+    font-size: var(--large-heading);
+    font-weight: 600;
 }
 
-.portfolio-left {
-  width: 100%;
-}
-.button-wrapper {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
+h2, h3, h4, h5, h6 {
+    font-size: var(--small-heading);
+    font-weight: 600;
 }
 
-/* mobile styling */
-
-@media (max-width: 768px) {
-  .portfolio-wrapper {
-    flex-direction:column;
-    padding: 0px 20px;
-  }
-
-  .button-blue {
-    padding: 3% 20%;
-  }
-
-  .portfolio-left {
-    width: 100%;
-  }
-
-  .portfolio-image {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media (min-width: 678px) {
-  .profielfoto {
-    width: 15%;
-  }
+p, a, button {
+    font-size: 1rem;
+    font-weight: 600;
 }
