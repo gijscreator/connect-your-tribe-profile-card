@@ -130,7 +130,69 @@ main {
       left: 5vw;
     }
 
-    svg:nth
-  }
+    .logo {
+      background-color: var(--main-background);
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      box-shadow: 0px 0px 15px white;
 
+  
+      img {
+        width: 1rem;
+        height: auto;
+      }
+
+      &.css {
+        position: absolute;
+        top: 8rem;
+        left: 1.6rem;
+
+        img {
+          width: 1.4rem;
+        }
+        
+      }
+
+      &.html {
+        position: absolute;
+        top: 0rem;
+        right: 1rem;
+
+        img {
+          width: 1.4rem;
+        }
+      }
+
+      &.js {
+        position: absolute;
+        top: 9.5rem;
+        right: 2rem;
+
+        img {
+          width: 1.8rem;
+        }
+      }
+
+      &.figma {
+        position: absolute;
+        top: 3.5rem;
+        left: 1rem;
+      }
+
+      &.node {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+
+        img {
+          width: 1.8rem;
+        }
+      }
+    }
+  }
 }
