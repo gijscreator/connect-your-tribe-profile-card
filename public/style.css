@@ -2,13 +2,23 @@
 1. CSS Reset, Global Defaults & Custom Properties
 ========================================================== */
 
+
 * {
 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "roboto", sans-serif;
+  font-family: "font", sans-serif;
+  letter-spacing: -.5px;
+}
+
+/* font */
+
+@font-face {
+  font-family: "font";
+  src: url("/assets/font.ttf");
+  font-display: swap;
 }
 
 :root {
@@ -17,6 +27,7 @@
 
 body {
   --main-background: light-dark(white, black);
+  --accent: #43A7FF;
 
   /* header */
   --header-background: light-dark(rgb(0, 0, 0), rgba(255, 255, 255, 0.209));
@@ -32,7 +43,7 @@ img, video {
 }
 
 h1 {
-    font-size: var(--large-heading);
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -56,20 +67,18 @@ header {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 50px;
   display: flex;
-  margin: 1rem auto;
-  width: 90vw;
+  margin: 5vw auto;
+  width: 95vw;
   height: 8vh;
   min-height: 60px;
   max-height: 160px;
-  position: fixed;
-  top: 5vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: sticky;
+  top: 2vh;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 0 12px -2px rgba(255, 255, 255, 0.5), 0 6px 6px rgba(0, 0, 0, 0.2);
 
   section {
-    width: 90vw;
+    width: 95vw;
     display: flex;
     justify-content: space-between;
     padding: .5rem 1rem;
@@ -89,4 +98,39 @@ header {
       
     }
   }
+}
+
+/* ==========================================================
+3. MAIN for home page
+========================================================== */
+
+main {
+  margin: 5vw;
+
+  h1 {
+    span {
+      color: var(--accent)
+    }
+  }
+
+  section:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+     width: 50vw;
+     height: auto;
+    } 
+
+    svg:nth-of-type(1) {
+      position: absolute;
+      top: -2vh;
+      left: 5vw;
+    }
+
+    svg:nth
+  }
+
 }
