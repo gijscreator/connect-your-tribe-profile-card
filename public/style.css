@@ -11,6 +11,7 @@
   list-style: none;
   font-family: "font", sans-serif;
   letter-spacing: -.5px;
+  text-decoration: none;
 }
 
 /* font */
@@ -47,9 +48,14 @@ h1 {
     font-weight: 600;
 }
 
-h2, h3, h4, h5, h6 {
-    font-size: var(--small-heading);
+h2 {
+    font-size: 1.6rem;
     font-weight: 600;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 p, a, button {
@@ -109,10 +115,12 @@ main {
 
   h1 {
     span {
-      color: var(--accent)
+      display: inline-block;
+      color: var(--accent);      
     }
   }
 
+  /* Section with profile image and tech stack icons */
   section:nth-of-type(1) {
     display: flex;
     justify-content: center;
@@ -136,8 +144,8 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 3rem;
-      height: 3rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 100%;
       box-shadow: 0px 0px 15px white;
 
@@ -149,7 +157,7 @@ main {
 
       &.css {
         position: absolute;
-        top: 8rem;
+        top: 8.5rem;
         left: 1.6rem;
 
         img {
@@ -171,7 +179,7 @@ main {
       &.js {
         position: absolute;
         top: 9.5rem;
-        right: 2rem;
+        right: 1.5rem;
 
         img {
           width: 1.8rem;
@@ -192,6 +200,53 @@ main {
         img {
           width: 1.8rem;
         }
+      }
+    }
+  }
+
+  /* section with heading, text, buttons */
+  section:nth-of-type(2) {
+
+    h2 {
+      margin-top: .5rem;
+
+      span {
+        position: relative;
+        margin-left: 1rem;
+
+      }
+
+      span::after {
+        content: url("data:image/svg+xml,%3Csvg width='156' height='60' viewBox='0 0 156 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M75.2956 1.21497C96.6837 -0.560124 116.293 1.05857 130.7 5.09397C137.905 7.11221 143.783 9.72727 147.931 12.8036C152.079 15.8805 154.447 19.3789 154.761 23.1667C155.076 26.9547 153.317 30.7963 149.733 34.5151C146.149 38.233 140.783 41.7813 134.009 44.9598C120.464 51.3151 101.39 56.1433 80.0018 57.9185C58.6137 59.6936 39.005 58.0758 24.5976 54.0404C17.3921 52.0222 11.514 49.4071 7.36672 46.3308C3.21846 43.2538 0.850279 39.7547 0.535895 35.9667C0.221603 32.1788 1.9806 28.338 5.56477 24.6193C9.14821 20.9014 14.5146 17.3531 21.2889 14.1746C34.8339 7.81927 53.9075 2.99009 75.2956 1.21497Z' stroke='%2343A7FF'/%3E%3C/svg%3E");
+        position: absolute;
+        top: -.4rem;
+        left: -.7rem;
+      }
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      background-color: var(--accent);
+      color: white;
+      width: 60vw;
+      height: 2.5rem;
+      padding: .5rem;
+      border-radius: 25px;
+      position: relative;
+
+      &::after {
+        display: block;
+        content: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 8.25H15.25M15.25 8.25L8.25 1.25M15.25 8.25L8.25 15.25' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        line-height: 0;
       }
     }
   }
