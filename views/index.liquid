@@ -46,7 +46,7 @@
      {{person.bio}}
     </p>
 
-    <a href="/portfolio.html">Take a look at my work</a>
+    <a href="/portfolio.liquid">Take a look at my work</a>
   </section>
 
   <!-- section with my work ( portfolio) -->
@@ -55,22 +55,45 @@
       <h3>
         My work
       </h3>
-      <a href="/portfolio.html">All work</a>
+      <a href="/portfolio.liquid">All work</a>
     </div>
-
-    <p>Campline</p>
-    <h4>
-      Webshop made with liquid
-    </h4>
-
+    <!-- article with campline -->
     <article>
-      <img src="/assets/campline.png" alt="campline website">
+      <p>Campline</p>
+      <h4>
+        Webshop for camping goods
+      </h4>
+      <img src="/assets/campline.png" alt="campline Webshop">
       <p>
         A custom webshop made with liquid 
         for Campline, a dutch camping shop
       </p>
     </article>
+    <!-- article with rijschooldedraai -->
+    <article>
+      <p>Rijschool de Draai</p>
+      <h4>
+        Website for a driving school
+      </h4>
+      <img src="/assets/rijschooldedraai.png" alt="Rijschool de Draai website">
+      <p>
+        A custom webshop made with liquid 
+        for Campline, a dutch camping shop
+      </p>
+    </article>
+    <!-- article with rooftopshop -->
+    <article>
+      <p>Rooftopshop</p>
+      <h4>
+        Webshop for roofing supplies
+      </h4>
+      <img src="/assets/rooftopshop.png" alt="rooftopshop Webshop">
+      <p>
+        A custom webshop made with liquid 
+        for Rooftopshop, a dutch roofing supply wewbshop
+      </p>
+    </article>
   </section>
 </main>
-
+{% render 'partials/footer.liquid' %}
 {% render 'partials/foot.liquid' %}
