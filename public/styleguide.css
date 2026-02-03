@@ -70,3 +70,21 @@ p, a, button {
     font-size: 1rem;
     font-weight: 600;
 }
+
+
+/* ==========================================================
+2. general styling
+========================================================== */
+
+
+.logo {
+    background-color: black;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    box-shadow: 0px 0px 15px light-dark(white, black);
+}
