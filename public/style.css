@@ -1,78 +1,5 @@
 /* ==========================================================
-1. CSS Reset, Global Defaults & Custom Properties
-========================================================== */
-
-
-* {
-
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-family: "font", sans-serif;
-  text-decoration: none;
-}
-
-/* font */
-
-@font-face {
-  font-family: "font";
-  src: url("/assets/font.ttf");
-  font-display: swap;
-}
-
-:root {
-    color-scheme: light dark;
-}
-
-body {
-  --main-background: light-dark(white, black);
-  --accent: #43A7FF;
-  --accent-secondary: #3757CB;
-
-  /* header */
-  --inverted-background: light-dark(black, rgba(255, 255, 255, 0.209));
-
-  padding: 1rem;
-}
-
-html {
-  /* hier geen var omdat dit niet goed werkte */
-  background-color: light-dark(white, black);
-}
-
-img, video {
-  width: 100%;
-  height: auto;
-}
-
-h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-h3, h4 {
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-h5, h6 {
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-p, a, button {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-/* ==========================================================
-2. HEADER for all pages
+1. HEADER for all pages
 ========================================================== */
 
 header {
@@ -115,6 +42,12 @@ header {
   }
 }
 
+/* ==========================================================
+2. menu drawer for all pages
+s======================================= */
+
+/* menu drawer */
+
 nav:nth-of-type(1) {
 
   position: fixed; 
@@ -124,13 +57,78 @@ nav:nth-of-type(1) {
   height: 100dvh;
   display: flex; 
   flex-direction: column;
-  background-color: var(--main-background);
+    background-image: linear-gradient(
+    155deg,
+    hsl(0deg 0% 24%) 0%,
+    hsl(0deg 0% 21%) 6%,
+    hsl(0deg 0% 18%) 13%,
+    hsl(0deg 0% 15%) 23%,
+    hsl(0deg 0% 12%) 34%,
+    hsl(0deg 0% 9%) 47%,
+    hsl(0deg 0% 6%) 63%,
+    hsl(0deg 0% 3%) 80%,
+    hsl(0deg 0% 0%) 100%
+  );
   transform: translateX(100%); 
   transition: transform 0.3s ease-in-out;
   z-index: 7;
 
   &.active {
     transform: translateX(0);
+  }
+
+  section:nth-of-type(1) {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    img {
+      width: 15vw;
+      height: auto;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  ul {
+    border-top: 2px solid white;
+
+    li {
+      border-bottom: 2px solid white;
+
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1.4rem;
+      color: white;
+      margin: 1rem 0;
+      padding: 0rem 2rem;
+
+      span {
+        position: relative;
+
+        &.active {
+
+          &::after {
+            content: url("data:image/svg+xml,%3Csvg width='168' height='51' viewBox='0 0 168 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M49.7024 1.91857C65.149 0.636579 93.5024 2.24547 118.481 7.48227C130.971 10.1007 142.52 13.607 151.158 18.057C159.857 22.5378 165.178 27.7516 166.087 33.5972C166.242 35.569 165.885 36.9919 165.12 38.0919C164.334 39.2225 162.989 40.2008 160.822 41.0121C156.418 42.6603 149.271 43.394 138.702 43.823C117.727 44.6743 83.9925 44.3175 34.4551 48.4289C26.6975 49.0728 20.8609 49.0406 16.4435 48.3853C12.0348 47.7313 9.14343 46.4718 7.16334 44.7449C5.19338 43.0267 3.97289 40.7123 3.1561 37.6448C2.33096 34.5459 1.9472 30.8007 1.57361 26.2993C1.22627 22.1136 2.11863 18.7638 4.02682 16.0094C5.95407 13.2275 9.00447 10.929 13.1803 9.03209C21.5772 5.21772 34.0883 3.21449 49.7024 1.91857Z' stroke='%2343A7FF' stroke-width='3'/%3E%3C/svg%3E");
+            position: absolute;
+            top: -1rem;
+            left: -1.5rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -340,6 +338,10 @@ main {
     }
   }
 }
+
+/* ==========================================================
+4. FOOTER for all pages
+========================================================== */
 
 footer {
   display: flex;
