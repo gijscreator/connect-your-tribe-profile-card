@@ -1,74 +1,4 @@
-{% render 'partials/head.liquid' %}
-
-<header>
-    <section>
-        <img src="{{person.avatar}}" alt="{{person.name}} logo">
-        <button class="openmenubutton"> 
-            <svg width="47" height="45" viewBox="0 0 47 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.875 22.5H41.125M5.875 11.25H41.125M5.875 33.75H41.125" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Menu 
-        </button>
-    </section>
-</header>
-
-<!-- mobile navigation menu -->
-<nav class="menu">
-  <section>
-      <img src="{{person.avatar}}" alt="{{person.name}} logo">
-      <button class="closemenubutton"> 
-          <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.86671 27.7083L7.70837 25.6667L16.3417 17.5L7.70837 9.33333L9.86671 7.29166L18.5 15.4583L27.1334 7.29166L29.2917 9.33333L20.6584 17.5L29.2917 25.6667L27.1334 27.7083L18.5 19.5417L9.86671 27.7083Z" fill="white"/>
-          </svg>
-          Close 
-      </button>
-  </section>
-  <ul class="menuitems">
-      <li>
-          <a href="/portfolio">
-              <span class="active">About me</span>
-              <svg width="48" height="45" viewBox="0 0 48 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 22.5H38M38 22.5L24 9.375M38 22.5L24 35.625" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </a>
-      </li>
-      <li>
-          <a href="/portfolio">
-              <span>Portfolio</span>
-              <svg width="48" height="45" viewBox="0 0 48 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 22.5H38M38 22.5L24 9.375M38 22.5L24 35.625" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </a>
-      </li>
-  </ul>
-  
-  <section>
-      <h3>My tech stack</h3>
-      <ul>
-          <!-- css img -->
-          <li class="logo css">
-              <img src="/assets/css.png" alt="css logo">
-          </li>
-          <!-- html img -->
-          <li class="logo html">
-              <img src="/assets/html.png" alt="html logo">
-          </li>
-          <!-- js img -->
-          <li class="logo js">
-              <img src="/assets/js.webp" alt="js logo">
-          </li>
-          <!-- figma img -->
-          <li class="logo figma">
-              <img src="/assets/figma.svg" alt="figma logo">
-          </li>
-          <!-- node img -->
-          <li class="logo node">
-              <img src="/assets/node.svg" alt="node logo">
-          </li>
-      </ul>
-      <img src="/assets/emoij-lines.png" alt="profile emoij gijs">
-  </section>
-</nav>
+{% render 'partials/head.liquid', person: person %}
 
 <main>
   <h1>Hello! I Am <span>{{person.name}}</span></h1>
@@ -85,23 +15,23 @@
 
     <!-- css img -->
     <div class="logo css">
-      <img src="/assets/css.png" alt="css logo">
+      <img src="{{ custom.badges[0] }}" alt="css logo">
     </div>
     <!-- html img -->
     <div class="logo html">
-      <img src="/assets/html.png" alt="html logo">
+      <img src="{{ custom.badges[1] }}" alt="html logo">
     </div>
     <!-- js img -->
     <div class="logo js">
-      <img src="/assets/js.webp" alt="js logo">
+      <img src="{{ custom.badges[2] }}" alt="js logo">
     </div>
     <!-- figma img -->
     <div class="logo figma">
-      <img src="/assets/figma.svg" alt="figma logo">
+      <img src="{{ custom.badges[3] }}" alt="figma logo">
     </div>
     <!-- node img -->
     <div class="logo node">
-      <img src="/assets/node.svg" alt="node logo">
+      <img src="{{ custom.badges[4] }}" alt="node logo">
     </div>
   </section>
 
@@ -111,11 +41,14 @@
       I'm a frontend <span>developer</span>
     </h2>
 
-    <p>
-     {{person.bio}}
-    </p>
+    {% if person.bio contains 'http' or person.bio contains '<div>' %}
+      <p>{{person.name}} born on {{ person.birthdate | date: "%-d %B, %Y" }} while holding a {{ person.nickname }} </p>
+    {% else %}
+      <p>{{ person.bio}}</p>
+    {% endif %}
 
-    <a href="/portfolio">Take a look at my work</a>
+    <a href="{{person.website}}">Take a look at my work</a>
+    <a href="{{person.website}}">Take a look at my work</a>
   </section>
 
   <!-- section with my work ( portfolio) --> 
@@ -168,25 +101,5 @@
     </article>
   </section>
 </main>
-<footer>
-    <section>
-        <h3>Ready to get started?</h3>
-        <p>Contact me and lets explore what is possible</p>
-        <a href="/contact.liquid">Contact</a>
-    </section>
-    <section>
-        <h3>Menu</h3>
-        <ul>
-            <li>
-                About
-            </li>
-            <li>
-                My work
-            </li>
-            <li>
-                Contact
-            </li>
-        </ul>
-    </section>
-</footer>
-{% render 'partials/foot.liquid' %}
+
+{% render 'partials/foot.liquid', person: person %}
