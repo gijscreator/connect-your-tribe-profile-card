@@ -88,3 +88,8 @@ p, a, button {
     border-radius: 100%;
     box-shadow: 0px 0px 15px light-dark(white, black);
 }
+
+body:has(.menu.active) {
+  overflow: hidden;
+  touch-action: none; 
+}
