@@ -51,9 +51,17 @@ app.get('/', async function (request, response) {
   })
 })
 
-app.get('/portfolio', async function (request, response) {
+app.get('/portfolio', async function (request, response) {s
    // Render practice.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
    response.render('portfolio.liquid', {
+    person: personResponseJSON.data,
+    custom: customData  
+  })
+})
+
+app.get('/contact', async function (request, response) {
+   // Render practice.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+   response.render('contact.liquid', {
     person: personResponseJSON.data,
     custom: customData  
   })

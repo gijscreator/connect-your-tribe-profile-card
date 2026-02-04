@@ -1,0 +1,16 @@
+{% render 'partials/head.liquid', person: person %}
+<main>
+  <h1>Data-Driven Web</h1>
+  <p>Ik ben dus {{ person.name }}</p>
+  {% assign current_date = "now" | date: "%-d %B, %Y" %}
+  <p>Het is vandaag {{ current_date }}</p>
+
+  {{ custom.hobby }}
+  <img src="{{ custom.badges[0] }}" alt="">
+  <img src="{{ custom.badges[1] }}" alt="">
+  <img src="{{ custom.badges[2] }}" alt="">
+  <img src="{{ custom.badges[3] }}" alt="">
+  <img src="{{ custom.badges[4] }}" alt="">
+  
+</main>
+{% render 'partials/foot.liquid', person: person %}
