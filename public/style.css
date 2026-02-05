@@ -209,126 +209,179 @@ nav.menu {
 
 main {
 
-  h1 {
-    span {
-      display: inline-block;
-      color: var(--accent);      
-    }
-  }
 
-  /* Section with profile image and tech stack icons */
+
   section:nth-of-type(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
 
-    img.emoji {
-     width: 50vw;
-     height: auto;
-    } 
-
-    svg:nth-of-type(1) {
-      position: absolute;
-      top: -2vh;
-      left: 5vw;
+    @media (min-width: 700px) {
+      display: flex;
     }
 
-    .logo {
+    h1 {
 
-      &.css {
+      margin: 1rem 0;
+      margin-left: 2rem;
+
+      @media (min-width: 700px) {
         position: absolute;
-        top: 8.5rem;
-        left: 1.6rem;     
-      }
-
-      &.html {
-        position: absolute;
-        top: 0rem;
-        right: 1rem;
-      }
-
-      &.js {
-        position: absolute;
-        top: 9.5rem;
-        right: 1.5rem;
-      }
-
-      &.figma {
-        position: absolute;
-        top: 3.5rem;
-        left: 1rem;
-      }
-
-      &.node {
-        position: absolute;
-        top: 5rem;
-        right: 0;
-      }
-    }
-  }
-
-  /* section with heading, text, buttons */
-  section:nth-of-type(2) {
-
-    h2 {
-      margin-top: .5rem;
+        left: 0;
+        height: 4vh;
+       }
 
       span {
-        position: relative;
-        margin-left: 1rem;
+        display: inline-block;
+        color: var(--accent);      
 
-        &::after {
-          content: url("data:image/svg+xml,%3Csvg width='149' height='57' viewBox='0 0 149 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.1657 2.18054C92.5521 0.488575 111.198 2.03841 124.846 5.86422C131.676 7.77876 137.174 10.241 141.009 13.0873C144.846 15.9356 146.872 19.0498 147.14 22.2797C147.408 25.5095 145.923 28.915 142.608 32.357C139.295 35.7965 134.278 39.1315 127.857 42.1457C115.027 48.1692 96.8914 52.7717 76.5049 54.4637C56.1184 56.1557 37.4727 54.6058 23.8244 50.78C16.9946 48.8654 11.4966 46.4033 7.66185 43.5569C3.82438 40.7085 1.799 37.5945 1.53093 34.3645C1.26295 31.1347 2.74721 27.7292 6.06256 24.2872C9.37565 20.8476 14.3925 17.5127 20.8132 14.4985C33.644 8.47502 51.7792 3.87252 72.1657 2.18054Z' stroke='%2343A7FF' stroke-width='3'/%3E%3C/svg%3E");
+
+      }
+    }
+
+    /* Section with profile image and tech stack icons */
+    article:nth-of-type(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+
+      @media (min-width: 700px) {
+        width: 40%;
+      }
+
+      img.emoji {
+
+        width: 50%;
+        height: auto;
+
+        @media (min-width: 700px) {
+          width: 70%;
+        }
+
+
+      } 
+
+      svg:nth-of-type(1) {
+        
+        position: absolute;
+        top: 2vh;
+        left: 7vw;
+
+        @media (min-width: 700px) {
           position: absolute;
-          top: -.8rem;
-          left: -1rem;
-          rotate: 3deg;
+          top: -2vh;
+          left: 30vw;
+          rotate: 180deg;
+          transform: scaleX(-1);
+        }
+
+      }
+
+      .logo {
+
+        &.css {
+          position: absolute;
+          top: 13.5rem;
+          left: 1.6rem;     
+        }
+
+        &.html {
+          position: absolute;
+          top: 4rem;
+          right: 1rem;
+        }
+
+        &.js {
+          position: absolute;
+          top: 14.5rem;
+          right: 1.5rem;
+        }
+
+        &.figma {
+          position: absolute;
+          top: 7.5rem;
+          left: 2rem;
+        }
+
+        &.node {
+          position: absolute;
+          top: 9rem;
+          right: 0;
         }
       }
+
+
+
+
     }
 
-    p {
-      margin: 1rem 0;
-    }
+    /* section with heading, text, buttons */
+    article:nth-of-type(2) {
 
-    a {
-      display: flex;
-      align-items: center;
-      background-color: var(--accent);
-      color: white;
-      width: 70vw;
-      max-width: 20rem;
-      height: 3rem;
-      padding: 1rem;
-      border-radius: 25px;
-      position: relative;
-      border: 2px solid var(--accent);
-      transition: all .3s linear;
-      
-      &:hover {
-        background-color: transparent;
-        transform: scale(1.05);
+      @media (min-width: 700px) {
+        width: 60%;
+        margin-top: 5rem;
       }
 
-      &:active {
-        transform: scale(0.95);
+
+      h2 {
+        margin-top: .5rem;
+
+        span {
+          position: relative;
+          margin-left: 1rem;
+
+          &::after {
+            content: url("data:image/svg+xml,%3Csvg width='149' height='57' viewBox='0 0 149 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.1657 2.18054C92.5521 0.488575 111.198 2.03841 124.846 5.86422C131.676 7.77876 137.174 10.241 141.009 13.0873C144.846 15.9356 146.872 19.0498 147.14 22.2797C147.408 25.5095 145.923 28.915 142.608 32.357C139.295 35.7965 134.278 39.1315 127.857 42.1457C115.027 48.1692 96.8914 52.7717 76.5049 54.4637C56.1184 56.1557 37.4727 54.6058 23.8244 50.78C16.9946 48.8654 11.4966 46.4033 7.66185 43.5569C3.82438 40.7085 1.799 37.5945 1.53093 34.3645C1.26295 31.1347 2.74721 27.7292 6.06256 24.2872C9.37565 20.8476 14.3925 17.5127 20.8132 14.4985C33.644 8.47502 51.7792 3.87252 72.1657 2.18054Z' stroke='%2343A7FF' stroke-width='3'/%3E%3C/svg%3E");
+            position: absolute;
+            top: -.8rem;
+            left: -1rem;
+            rotate: 3deg;
+          }
+        }
       }
 
-      &::after {
-        display: block;
-        content: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 8.25H15.25M15.25 8.25L8.25 1.25M15.25 8.25L8.25 15.25' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        position: absolute;
-        right: 2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 0;
+      p {
+        margin: 1rem 0;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        background-color: var(--accent);
+        color: white;
+        width: 70vw;
+        max-width: 20rem;
+        height: 3rem;
+        padding: 1rem;
+        border-radius: 25px;
+        position: relative;
+        border: 2px solid var(--accent);
+        transition: all .3s linear;
+        
+        &:hover {
+          background-color: transparent;
+          transform: scale(1.05);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        &::after {
+          display: block;
+          content: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 8.25H15.25M15.25 8.25L8.25 1.25M15.25 8.25L8.25 15.25' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          position: absolute;
+          right: 2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          line-height: 0;
+        }
       }
     }
   }
 
   /* section with my work (portfolio) */
-  section:nth-of-type(3) {
+  section:nth-of-type(2) {
     margin-top: 4rem;
 
     div.work-heading {
@@ -417,7 +470,7 @@ main {
     }
   }
 
-  section:nth-of-type(4) {
+  section:nth-of-type(3) {
     
     display: flex;
     flex-direction: column;
