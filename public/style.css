@@ -8,8 +8,8 @@ header {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 50px;
   display: flex;
-  margin: 5vw auto; 
-  height: 8vh;
+  margin: 3dvh auto; 
+  height: 10dvh;
   min-height: 60px;
   max-height: 160px;
   position: sticky;
@@ -26,7 +26,8 @@ header {
     padding: .5rem 1rem;
 
     img {
-      width: 50px;
+      width: 4rem;
+      min-width: 3rem;
       height: auto;
     }
 
@@ -37,7 +38,10 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+
+      @media (min-width: 700px) {
+        display: none;
+      }
     }
   }
 }
@@ -46,9 +50,8 @@ header {
 2. menu drawer for all pages
 s======================================= */
 
-/* menu drawer */
-
-nav:nth-of-type(1) {
+/* mobile menu drawer */
+nav.mobile-menu {
 
   position: fixed; 
   top: 0;
@@ -72,6 +75,10 @@ nav:nth-of-type(1) {
   transform: translateX(100%); 
   transition: transform 0.3s ease-in-out;
   z-index: 7;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
 
   &.active {
     transform: translateX(0);
@@ -168,6 +175,34 @@ nav:nth-of-type(1) {
   }
 }
 
+nav.menu {
+  display: none;
+  width: 70%;
+
+  @media (min-width: 700px) {
+    display: flex;
+
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  li {
+    a {
+      color: white;
+      font-size: 1.4rem;
+
+      &.active {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
 /* ==========================================================
 3. MAIN for home page
 ========================================================== */
@@ -188,7 +223,7 @@ main {
     align-items: center;
     position: relative;
 
-    img {
+    img.emoji {
      width: 50vw;
      height: auto;
     } 
@@ -200,51 +235,23 @@ main {
     }
 
     .logo {
-      background-color: black;
-      border: 2px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 100%;
-      box-shadow: 0px 0px 15px light-dark(white, black);
-
-  
-      img {
-        width: 1rem;
-        height: auto;
-      }
 
       &.css {
         position: absolute;
         top: 8.5rem;
-        left: 1.6rem;
-
-        img {
-          width: 1.4rem;
-        }
-        
+        left: 1.6rem;     
       }
 
       &.html {
         position: absolute;
         top: 0rem;
         right: 1rem;
-
-        img {
-          width: 1.4rem;
-        }
       }
 
       &.js {
         position: absolute;
         top: 9.5rem;
         right: 1.5rem;
-
-        img {
-          width: 1.8rem;
-        }
       }
 
       &.figma {
@@ -257,10 +264,6 @@ main {
         position: absolute;
         top: 5rem;
         right: 0;
-
-        img {
-          width: 1.8rem;
-        }
       }
     }
   }
@@ -275,14 +278,13 @@ main {
         position: relative;
         margin-left: 1rem;
 
-      }
-
-      span::after {
-        content: url("data:image/svg+xml,%3Csvg width='149' height='57' viewBox='0 0 149 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.1657 2.18054C92.5521 0.488575 111.198 2.03841 124.846 5.86422C131.676 7.77876 137.174 10.241 141.009 13.0873C144.846 15.9356 146.872 19.0498 147.14 22.2797C147.408 25.5095 145.923 28.915 142.608 32.357C139.295 35.7965 134.278 39.1315 127.857 42.1457C115.027 48.1692 96.8914 52.7717 76.5049 54.4637C56.1184 56.1557 37.4727 54.6058 23.8244 50.78C16.9946 48.8654 11.4966 46.4033 7.66185 43.5569C3.82438 40.7085 1.799 37.5945 1.53093 34.3645C1.26295 31.1347 2.74721 27.7292 6.06256 24.2872C9.37565 20.8476 14.3925 17.5127 20.8132 14.4985C33.644 8.47502 51.7792 3.87252 72.1657 2.18054Z' stroke='%2343A7FF' stroke-width='3'/%3E%3C/svg%3E");
-        position: absolute;
-        top: -.8rem;
-        left: -1rem;
-        rotate: 3deg;
+        &::after {
+          content: url("data:image/svg+xml,%3Csvg width='149' height='57' viewBox='0 0 149 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.1657 2.18054C92.5521 0.488575 111.198 2.03841 124.846 5.86422C131.676 7.77876 137.174 10.241 141.009 13.0873C144.846 15.9356 146.872 19.0498 147.14 22.2797C147.408 25.5095 145.923 28.915 142.608 32.357C139.295 35.7965 134.278 39.1315 127.857 42.1457C115.027 48.1692 96.8914 52.7717 76.5049 54.4637C56.1184 56.1557 37.4727 54.6058 23.8244 50.78C16.9946 48.8654 11.4966 46.4033 7.66185 43.5569C3.82438 40.7085 1.799 37.5945 1.53093 34.3645C1.26295 31.1347 2.74721 27.7292 6.06256 24.2872C9.37565 20.8476 14.3925 17.5127 20.8132 14.4985C33.644 8.47502 51.7792 3.87252 72.1657 2.18054Z' stroke='%2343A7FF' stroke-width='3'/%3E%3C/svg%3E");
+          position: absolute;
+          top: -.8rem;
+          left: -1rem;
+          rotate: 3deg;
+        }
       }
     }
 
@@ -327,13 +329,14 @@ main {
 
   /* section with my work (portfolio) */
   section:nth-of-type(3) {
-    margin-top: 5rem;
+    margin-top: 4rem;
 
     div.work-heading {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
+      margin-bottom: 2rem;
       
       a {
         display: flex;
@@ -353,11 +356,19 @@ main {
 
     /* article per work portfolio */
     article {
+      margin-bottom: 2rem;
+      border-top: 2px solid white;
 
-        @media (min-width: 700px) {
-          display: flex;
-          flex-direction: column;
-        }
+      @media (min-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        border: none;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+      }
 
       img {
         width: 100%;
@@ -372,16 +383,12 @@ main {
       }
 
       p {
-        margin-top: 2rem;
-
-        &:nth-of-type(2) {
-            background-color: var(--inverted-background);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin-top: .5rem;
-            padding: .5rem;
-            border-radius: 0px 0px 1rem 1rem;
-        }
+          margin-bottom: 1rem;
+          background-color: var(--inverted-background);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          padding: .5rem;
+          border-radius: 0px 0px 1rem 1rem;
       }
 
       div {
@@ -407,6 +414,47 @@ main {
       h4 {
         margin: 1rem 0;
       }
+    }
+  }
+
+  section:nth-of-type(4) {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h3 {
+      margin-bottom: 2rem;
+    }
+
+    article {
+      display: flex;
+      gap: calc(.3rem + 2.5vw);
+
+      @media (min-width: 400px) {
+        gap: calc(.2rem + 6vw);
+      }
+    }
+
+    img.planet {
+
+      @media (min-width: 600px) {
+        width: calc(4rem + 85vw);
+        max-width: 85vw;
+      }
+
+      @media (min-width: 1000px) {
+        max-width: 70vw;
+      }
+    }
+
+    .logo {
+      width: calc(1.5rem + 8vw);
+      max-width: 6rem;
+      height: calc(1.5rem + 8vw);
+      max-height: 6rem;
     }
   }
 }

@@ -78,15 +78,41 @@ p, a, button {
 
 
 .logo {
-    background-color: black;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 100%;
-    box-shadow: 0px 0px 15px light-dark(white, black);
+  background-color: black;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  box-shadow: 0px 0px 15px light-dark(white, black);
+
+  /* global img badge(html, css) */
+  img {
+    width: calc(1.7rem + 1.3vw);
+    height: auto;
+  }
+
+  &.figma {
+    img {
+      width: calc(1.2rem + 1.3vw);
+    }
+  }
+
+  &.js {
+
+    img {
+      width: calc(2.3rem + 1.3vw);
+    }
+  }
+
+  &.node {
+
+    img {
+      width: calc(2.4rem + 1.3vw);
+    }
+  }
 }
 
 body:has(.menu.active) {

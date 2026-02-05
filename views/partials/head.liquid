@@ -15,6 +15,19 @@
 <header>
   <section>
       <img src="{{person.avatar}}" alt="{{person.name}} logo">
+      <nav class="menu">
+        <ul>
+            <li>
+                <a href="/portfolio">My work</a>
+            </li>
+            <li>
+                <a href="#about">About me</a>
+            </li>
+            <li>
+                <a href="/contact">Contact</a>
+            </li>
+        </ul>
+      </nav>
       <button class="openmenubutton"> 
           <svg width="47" height="45" viewBox="0 0 47 45" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.875 22.5H41.125M5.875 11.25H41.125M5.875 33.75H41.125" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,7 +38,7 @@
 </header>
 
 <!-- mobile navigation menu -->
-<nav class="menu">
+<nav class="mobile-menu">
   <section>
       <img src="{{person.avatar}}" alt="{{person.name}} logo">
       <button class="closemenubutton"> 
