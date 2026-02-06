@@ -31,6 +31,12 @@ header {
       height: auto;
     }
 
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     button {
       all: unset;
       cursor: pointer;
@@ -275,7 +281,6 @@ main {
           rotate: 190deg;
           transform: scaleX(-1);
         }
-
       }
 
       .logo {

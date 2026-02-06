@@ -26,6 +26,7 @@
 }
 
 body {
+
   --main-background: light-dark(white, black);
   --inverted-background: light-dark(black, white);
   --accent: #43A7FF;
@@ -36,10 +37,13 @@ body {
 
   --reg-padding: 1rem;
 
-  --paragraph-font: clamp(1rem, 2vw, 3rem);
-  --heading-small: clamp(1.5rem, 3vw, 3rem);
-  --heading-medium: clamp(1.6rem, 3vw, 3.5rem);
-  --heading-big: clamp(1.2rem, 3vw, 4rem);
+  --paragraph-font: clamp(1rem, 2vw, 1.5rem);
+  --heading-small: clamp(1.2rem, 2vw, 1rem);
+  --heading-medium: clamp(1.3rem, 2.5vw, 2rem);
+  --heading-big: clamp(1.4rem, 3vw, 2.5rem);
+
+  padding: var(--reg-padding);
+
 }
  
 html {
