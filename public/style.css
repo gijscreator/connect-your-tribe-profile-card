@@ -259,7 +259,6 @@ main {
 
         width: 50%;
         height: auto;
-        border-radius: 50%;
 
         @media (min-width: 700px) {
           width: 70%;
@@ -315,10 +314,6 @@ main {
           right: 0;
         }
       }
-
-
-
-
     }
 
     /* section with heading, text, buttons */
@@ -364,6 +359,7 @@ main {
         position: relative;
         border: 2px solid var(--accent);
         transition: all .3s linear;
+        margin-top: 2rem;
         
         &:hover {
           background-color: transparent;

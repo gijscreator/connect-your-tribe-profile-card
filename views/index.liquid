@@ -1,10 +1,7 @@
 {% render 'partials/head.liquid', person: person %}
 
 <main>
-  
-
   <section>
-
     <h1>Hello! I Am <span>{{person.name}}</span></h1>
     
     <!-- Section with profile image and tech stack icons -->
@@ -36,7 +33,7 @@
       </figure>
       <!-- node img -->
       <figure class="logo node">
-        <img src="{{ custom.badges[4] }}" alt="node logo">
+        <img src="{{ custom.badges[4] }}"  alt="node logo">
       </figure>
     </article>
 
@@ -45,13 +42,7 @@
       <h2>
         I'm a frontend <span>developer</span>
       </h2>
-
-      {% if person.bio contains 'http' or person.bio contains '<div>' %}
-        <p>{{person.name}} born on {{ person.birthdate | date: "%-d %B, %Y" }} while holding a {{ person.nickname }} </p>
-      {% else %}
-        <p>{{ person.bio}}</p>
-      {% endif %}
-
+        {% comment %} <p>{{ person.bio}}</p> {% endcomment %}
       <a href="{{person.website}}" target="_blank">My digital garden</a>
     </article>
 
@@ -134,7 +125,8 @@
       <figure class="logo node">
         <img src="{{ custom.badges[4] }}" alt="node logo">
       </figure>
-  </article>
+    </article>
+  </section>
   
   <img src="/assets/planet-2.png" class="planet" alt="planet with tech stack">
 
