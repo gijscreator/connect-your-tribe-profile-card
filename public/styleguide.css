@@ -27,13 +27,19 @@
 
 body {
   --main-background: light-dark(white, black);
+  --inverted-background: light-dark(black, white);
   --accent: #43A7FF;
-  --accent-secondary: #3757CB;
+  
 
   /* header */
   --inverted-background: light-dark(black, rgba(255, 255, 255, 0.209));
 
-  padding: 1rem;
+  --reg-padding: 1rem;
+
+  --paragraph-font: clamp(1rem, 2vw, 3rem);
+  --heading-small: clamp(1.5rem, 3vw, 3rem);
+  --heading-medium: clamp(1.6rem, 3vw, 3.5rem);
+  --heading-big: clamp(1.2rem, 3vw, 4rem);
 }
  
 html {
@@ -47,27 +53,27 @@ img, video {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: var(--heading-big);
     font-weight: 600;
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: var(--heading-medium);
     font-weight: 600;
 }
 
 h3, h4 {
-    font-size: 1.4rem;
+    font-size: var(--heading-small);
     font-weight: 600;
 }
 
 h5, h6 {
-  font-size: 1.7rem;
+  font-size: var(--heading-small);
   font-weight: 600;
 }
 
 p, a, button {
-    font-size: 1rem;
+    font-size: var(--paragraph-font);
     font-weight: 600;
 }
 
